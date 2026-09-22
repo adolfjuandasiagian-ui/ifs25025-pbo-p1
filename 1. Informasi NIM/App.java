@@ -6,7 +6,7 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String nim = sc.hasNextLine() ? sc.nextLine().trim() : "";
+        System.out.println("Informasi NIM " + nim + ": ");
 
         // 1 & 2: validasi panjang NIM
         if (nim.length() != 8) {
