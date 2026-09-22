@@ -49,9 +49,9 @@ public class App {
         }
 
         // 7: tampilkan informasi
-        System.out.println("Format NIM: " + nim);
-        System.out.println("Program Studi: " + programStudi);
-        System.out.println("Angkatan: " + angkatan);
-        System.out.println("Urutan: " + urutan);
+        System.out.println("Informasi NIM " + nim + ":");
+        System.out.println(">> Program Studi: " + programStudi);
+        System.out.println(">> Angkatan: " + angkatan);
+        System.out.println(">> Urutan: " + urutan);
     }
 }
