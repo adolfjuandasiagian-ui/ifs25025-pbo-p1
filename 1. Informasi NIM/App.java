@@ -20,8 +20,9 @@ public class App {
         prodiMap.put("12S", "Sarjana Sistem Informasi");
         prodiMap.put("13S", "Sarjana Teknik Elektro");
         prodiMap.put("14S", "Sarjana Manajemen Rekayasa");
+        prodiMap.put("21S", "Sarjana Manajemen Rekayasa"); // Menambahkan prefix 21S
         prodiMap.put("22S", "Sarjana Teknik Metalurgi");
-        prodiMap.put("31S", "Sarjana Teknik Bioproses"); // Ditulis sesuai expected output
+        prodiMap.put("31S", "Sarjana Teknik Bioproses");
         prodiMap.put("114", "Diploma 4 Teknologi Rekayasa Perangkat Lunak");
         prodiMap.put("115", "Diploma 3 Teknologi Informasi");
         prodiMap.put("153", "Diploma 3 Teknologi Komputer");
