@@ -21,7 +21,7 @@ public class App {
         prodiMap.put("13S", "Sarjana Teknik Elektro");
         prodiMap.put("14S", "Sarjana Manajemen Rekayasa");
         prodiMap.put("22S", "Sarjana Teknik Metalurgi");
-        prodiMap.put("31S", "Sarjana Bioteknologi");
+        prodiMap.put("31S", "Sarjana Teknik Bioproses"); // Ditulis sesuai expected output
         prodiMap.put("114", "Diploma 4 Teknologi Rekayasa Perangkat Lunak");
         prodiMap.put("115", "Diploma 3 Teknologi Informasi");
         prodiMap.put("153", "Diploma 3 Teknologi Komputer");
@@ -48,7 +48,7 @@ public class App {
             return;
         }
 
-        // 7: tampilkan informasi (SATU KALI SAJA, di sini)
+        // 7: tampilkan informasi
         System.out.println("Informasi NIM " + nim + ": ");
         System.out.println(">> Program Studi: " + programStudi);
         System.out.println(">> Angkatan: " + angkatan);
