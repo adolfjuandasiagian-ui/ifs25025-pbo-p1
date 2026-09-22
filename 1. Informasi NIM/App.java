@@ -19,14 +19,13 @@ public class App {
         prodiMap.put("11S", "Sarjana Informatika");
         prodiMap.put("12S", "Sarjana Sistem Informasi");
         prodiMap.put("13S", "Sarjana Teknik Elektro");
-        prodiMap.put("14S", "Sarjana Manajemen Rekayasa");
         prodiMap.put("21S", "Sarjana Manajemen Rekayasa");
         prodiMap.put("22S", "Sarjana Teknik Metalurgi");
         prodiMap.put("31S", "Sarjana Teknik Bioproses");
-        prodiMap.put("32S", "Sarjana Bioteknologi"); // Menambahkan prefix 32S
+        prodiMap.put("32S", "Sarjana Bioteknologi");
         prodiMap.put("114", "Diploma 4 Teknologi Rekayasa Perangkat Lunak");
-        prodiMap.put("115", "Diploma 3 Teknologi Informasi");
-        prodiMap.put("153", "Diploma 3 Teknologi Komputer");
+        prodiMap.put("113", "Diploma 3 Teknologi Informasi");  // Disesuaikan dari 115 ke 113
+        prodiMap.put("133", "Diploma 3 Teknologi Komputer");   // Disesuaikan dari 153 ke 133
 
         // 3 & 4: ambil & cocokkan prefix
         String prefix = nim.substring(0, 3);
