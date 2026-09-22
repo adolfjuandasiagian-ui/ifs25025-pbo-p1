@@ -6,7 +6,7 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Informasi NIM " + nim + ": ");
+        String nim = sc.hasNextLine() ? sc.nextLine().trim() : "";
 
         // 1 & 2: validasi panjang NIM
         if (nim.length() != 8) {
@@ -48,8 +48,8 @@ public class App {
             return;
         }
 
-        // 7: tampilkan informasi
-        System.out.println("Informasi NIM " + nim + ":");
+        // 7: tampilkan informasi (SATU KALI SAJA, di sini)
+        System.out.println("Informasi NIM " + nim + ": ");
         System.out.println(">> Program Studi: " + programStudi);
         System.out.println(">> Angkatan: " + angkatan);
         System.out.println(">> Urutan: " + urutan);
