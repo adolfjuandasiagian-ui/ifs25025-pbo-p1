@@ -10,7 +10,7 @@ public class App {
 
         // 1 & 2: validasi panjang NIM
         if (nim.length() != 8) {
-            System.out.println("NIM tidak valid");
+            System.out.println("NIM harus 8 karakter");
             return;
         }
 
