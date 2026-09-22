@@ -1,53 +1,57 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class App {
 
-    static String[] prefixKode = {
-        "11S", "12S", "13S", "21S", "22S", "31S", "32S", "114", "113", "133"
-    };
-    static String[] prefixNama = {
-        "Sarjana Informatika",
-        "Sarjana Sistem Informasi",
-        "Sarjana Teknik Elektro",
-        "Sarjana Manajemen Rekayasa",
-        "Sarjana Teknik Metalurgi",
-        "Sarjana Teknik Bioproses",
-        "Sarjana Bioteknologi",
-        "Diploma 4 Teknologi Rekasaya Perangkat Lunak",
-        "Diploma 3 Teknologi Informasi",
-        "Diploma 3 Teknologi Komputer"
-    };
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String nim = sc.hasNextLine() ? sc.nextLine() : "";
+        String nim = sc.hasNextLine() ? sc.nextLine().trim() : "";
 
+        // 1 & 2: validasi panjang NIM
         if (nim.length() != 8) {
-            System.out.println("NIM harus 8 karakter");
+            System.out.println("NIM tidak valid");
             return;
         }
 
-        String prefix = nim.substring(0, 3);
-        String namaProdi = null;
-        for (int i = 0; i < prefixKode.length; i++) {
-            if (prefixKode[i].equals(prefix)) {
-                namaProdi = prefixNama[i];
-                break;
-            }
-        }
+        // Tabel prefix program studi
+        Map<String, String> prodiMap = new HashMap<>();
+        prodiMap.put("11S", "Sarjana Informatika");
+        prodiMap.put("12S", "Sarjana Sistem Informasi");
+        prodiMap.put("13S", "Sarjana Teknik Elektro");
+        prodiMap.put("14S", "Sarjana Manajemen Rekayasa");
+        prodiMap.put("22S", "Sarjana Teknik Metalurgi");
+        prodiMap.put("31S", "Sarjana Bioteknologi");
+        prodiMap.put("114", "Diploma 4 Teknologi Rekayasa Perangkat Lunak");
+        prodiMap.put("115", "Diploma 3 Teknologi Informasi");
+        prodiMap.put("153", "Diploma 3 Teknologi Komputer");
 
-        if (namaProdi == null) {
+        // 3 & 4: ambil & cocokkan prefix
+        String prefix = nim.substring(0, 3);
+        if (!prodiMap.containsKey(prefix)) {
             System.out.println("Kode tidak tersedia");
             return;
         }
+        String programStudi = prodiMap.get(prefix);
 
-        String kodeAngkatan = nim.substring(3, 5);
-        int angkatan = Integer.parseInt("20" + kodeAngkatan);
-        int urutan = Integer.parseInt(nim.substring(5, 8));
+        // 5 & 6: ambil kode angkatan dan nomor urut
+        String kodeAngkatanStr = nim.substring(3, 5);
+        String urutanStr = nim.substring(5, 8);
 
-        System.out.println("Inforamsi NIM " + nim + ": ");
-        System.out.println(">> Program Studi: " + namaProdi);
-        System.out.println(">> Angkatan: " + angkatan);
-        System.out.println(">> Urutan: " + urutan);
+        int angkatan;
+        int urutan;
+        try {
+            angkatan = Integer.parseInt("20" + kodeAngkatanStr);
+            urutan = Integer.parseInt(urutanStr);
+        } catch (NumberFormatException e) {
+            System.out.println("NIM tidak valid");
+            return;
+        }
+
+        // 7: tampilkan informasi
+        System.out.println("Format NIM: " + nim);
+        System.out.println("Program Studi: " + programStudi);
+        System.out.println("Angkatan: " + angkatan);
+        System.out.println("Urutan: " + urutan);
     }
 }
